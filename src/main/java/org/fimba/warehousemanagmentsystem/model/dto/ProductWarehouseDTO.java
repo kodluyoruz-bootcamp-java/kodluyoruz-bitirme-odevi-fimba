@@ -1,0 +1,38 @@
+package org.fimba.warehousemanagmentsystem.model.dto;
+
+import lombok.Getter;
+import lombok.Setter;
+import org.fimba.warehousemanagmentsystem.base.WarehouseAPIBaseConvetor;
+import org.fimba.warehousemanagmentsystem.model.entities.ProductEntity;
+import org.fimba.warehousemanagmentsystem.model.entities.UserEntity;
+import org.fimba.warehousemanagmentsystem.model.entities.WarehouseEntity;
+
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
+
+@Getter
+@Setter
+public class ProductWarehouseDTO  {
+
+  private Long fromId;
+  private Long toId;
+
+  @NotNull
+  private Long productId;
+  @NotNull
+  private Long warehouseId;
+  @NotNull
+  private Long userId;
+  @NotNull
+  private Long stockAmount;
+  @NotNull
+  private Date transactionDate;
+
+  private ProductEntity productEntity;
+  private WarehouseEntity warehouseEntity;
+  private UserEntity userEntity;
+}
