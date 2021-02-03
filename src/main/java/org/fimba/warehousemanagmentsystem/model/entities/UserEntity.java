@@ -7,6 +7,7 @@ import org.fimba.warehousemanagmentsystem.model.enums.WarehouseStatus;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter
@@ -15,11 +16,7 @@ import java.util.Set;
 public class UserEntity extends BaseEntity{
 
 
-
-    @OneToMany(mappedBy = "userEntity",cascade = CascadeType.ALL)
-    private Set<ProductWarehouse> productWarehouses;
-
-    @Column(name = "EMAİL")
+    @Column(name = "EMAIL")
     private String email;
 
 

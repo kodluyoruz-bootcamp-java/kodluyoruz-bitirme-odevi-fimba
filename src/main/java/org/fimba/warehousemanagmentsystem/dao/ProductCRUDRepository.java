@@ -7,8 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 
+
 @Repository
 public interface ProductCRUDRepository extends JpaRepository<ProductEntity, Long> {
-    @Query("SELECT w FROM ProductEntity w WHERE w.status ='ACTIVE' OR w.status ='PASSIVE' ")
-    Collection<ProductEntity> findAllActiveAndPassive();
+    @Query("SELECT w FROM ProductEntity w WHERE w.status ='ACTIVE' ")
+    Collection<ProductEntity> findAllActive();
 }

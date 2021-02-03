@@ -15,8 +15,14 @@ public class WarehouseEntity extends BaseEntity{
 
 
 
- @OneToMany(mappedBy = "warehouse",cascade = CascadeType.ALL)
-    private Set<ProductWarehouse> productWarehouses = new HashSet<>();
+   /*@ElementCollection
+    @CollectionTable(
+            name= "PRODUCT_WAREHOUSE",
+            joinColumns = @JoinColumn(name = "WAREHOUSE_ID")
+    )
+    private Set<ProductWarehouse> productWarehouses = new HashSet<>();*/
+
+
 
     @Enumerated(EnumType.STRING)
     @Column(name = "STATUS",length = 7,nullable = false)
